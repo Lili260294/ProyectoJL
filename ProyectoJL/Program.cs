@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using ProyectoJL.Context;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configuracion de la aplicacion
+builder.Configuration.AddJsonFile("appsettings.json");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ProyectJLContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 

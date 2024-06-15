@@ -10,10 +10,10 @@ namespace ProyectoJL.Models
         public string Titulo { get; set; }
         public string Autor { get; set; }
         public string IDEditorial { get; set; }
-        public string Año { get; set; }
-        public string Precio { get; set; }
+        public int Año { get; set; }
+        public decimal Precio { get; set; }
         public string Comentarios { get; set; }
-        public string Foto { get; set; }
+        public byte [] Foto { get; set; }
 
         public virtual ICollection<Editorial>  Editorials { get; set; } 
     }
